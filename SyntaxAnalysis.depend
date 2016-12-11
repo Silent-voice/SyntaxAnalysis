@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1480908928 source:g:\编译\实验\作业七第一次检查\syntaxanalysis\lexanalysis.cpp
+	"LexAnalysis.h"
+
+1480832747 g:\编译\实验\作业七第一次检查\syntaxanalysis\lexanalysis.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<stdio.h>
+	<string.h>
+	<algorithm>
+
+1480832683 source:g:\编译\实验\作业七第一次检查\syntaxanalysis\main.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<vector>
+	<string>
+	"table.h"
+	"inter_code.h"
+	"mips_code.h"
+	"LexAnalysis.h"
+
+1480834794 g:\编译\实验\作业七第一次检查\syntaxanalysis\table.h
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	<sstream>
+
+1480832971 g:\编译\实验\作业七第一次检查\syntaxanalysis\inter_code.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdio.h>
+	<vector>
+	"table.h"
+
+1481028192 g:\编译\实验\作业七第一次检查\syntaxanalysis\mips_code.h
+	<iostream>
+	<fstream>
+	<string>
+	<stdio.h>
+	<vector>
+	"table.h"
+

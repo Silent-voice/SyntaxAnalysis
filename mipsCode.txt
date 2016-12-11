@@ -1,0 +1,1164 @@
+.data 268501180
+STRING_0: .asciiz "x+1=
+STRING_1: .asciiz "void return check ok
+STRING_2: .asciiz "failed
+STRING_3: .asciiz "== check failed
+STRING_4: .asciiz "== check ok
+STRING_5: .asciiz "!= check failed
+STRING_6: .asciiz "return 1 check ok
+STRING_7: .asciiz "!= check ok
+STRING_8: .asciiz "> check failed
+STRING_9: .asciiz "else check ok
+STRING_10: .asciiz "> check ok
+STRING_11: .asciiz "< check failed
+STRING_12: .asciiz "< check ok
+STRING_13: .asciiz ">= check failed
+STRING_14: .asciiz "5>=5 check ok
+STRING_15: .asciiz "6>=5 check ok
+STRING_16: .asciiz "<= check failed
+STRING_17: .asciiz "5<=5 check ok
+STRING_18: .asciiz "4<=5 check ok
+STRING_19: .asciiz "multiple if check ok
+STRING_20: .asciiz "multiple if check failed1
+STRING_21: .asciiz "multiple if check failed2
+STRING_22: .asciiz "multiple if check failed3
+STRING_23: .asciiz "while for 3 times
+STRING_24: .asciiz "while if num5 > 0 for 3 times
+STRING_25: .asciiz "number 1 switch check
+STRING_26: .asciiz "match check ok
+STRING_27: .asciiz "check failed at 
+STRING_28: .asciiz "multiple switch statement check ok
+STRING_29: .asciiz "default check
+STRING_30: .asciiz "default check ok
+STRING_31: .asciiz "char switch check 
+STRING_32: .asciiz "check while switch:
+STRING_33: .asciiz "enter length of string(1-10):
+STRING_34: .asciiz "enter a letter:
+STRING_35: .asciiz "cnt=
+STRING_36: .asciiz "simple expression
+STRING_37: .asciiz "ans = a - b + 100 * -2 + num3 = 
+STRING_38: .asciiz "complex expression:
+STRING_39: .asciiz "3a-50=
+STRING_40: .asciiz "return 'd'
+STRING_41: .asciiz "ch+1=
+STRING_42: .asciiz "return 1 check
+STRING_43: .asciiz "ok
+STRING_44: .asciiz "check power:
+STRING_45: .asciiz "-5^3=
+.text
+li $8 1
+sw $8 268500992($0)
+li $8 -2
+sw $8 268500996($0)
+li $8 0
+sw $8 268501000($0)
+li $8 0
+sw $8 268501004($0)
+li $8 97
+sw $8 268501008($0)
+li $8 48
+sw $8 268501012($0)
+li $8 95
+sw $8 268501016($0)
+li $8 42
+sw $8 268501020($0)
+li $8 45
+sw $8 268501024($0)
+li $8 66
+sw $8 268501028($0)
+j LABEL_FUNC_main
+LABEL_FUNC_v_func_add:
+sw $ra 0($sp)
+lw $8 12($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 12($sp)
+la $a0 STRING_0
+li $v0 4
+syscall
+lw $8 12($sp)
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_v_func_ret:
+sw $ra 0($sp)
+la $a0 STRING_1
+li $v0 4
+syscall
+lw $ra 0($sp)
+jr $ra
+la $a0 STRING_2
+li $v0 4
+syscall
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_i_func_return_1:
+sw $ra 0($sp)
+li $8 1
+move $16 $8
+sw $16 8($sp)
+lw $ra 0($sp)
+jr $ra
+li $8 0
+sw $8 8($sp)
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_i_func_add:
+sw $ra 0($sp)
+lw $8 12($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 8($sp)
+lw $ra 0($sp)
+jr $ra
+li $8 0
+sw $8 8($sp)
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_func_if_cmp:
+sw $ra 0($sp)
+li $8 1
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 2
+move $17 $8
+bne $16 $17 LABEL_IF_0
+la $a0 STRING_3
+li $v0 4
+syscall
+j LABEL_IF_1
+LABEL_IF_0:
+LABEL_IF_1:
+lw $8 268501052($0)
+move $16 $8
+move $8 $sp
+subi $sp $sp 24
+sw $8 4($sp)
+sw $16 12($sp)
+sw $16 16($sp)
+sw $17 20($sp)
+jal LABEL_FUNC_i_func_add
+lw $16 16($sp)
+lw $17 20($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $17 $3
+sw $17 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 2
+move $17 $8
+bne $16 $17 LABEL_IF_2
+la $a0 STRING_4
+li $v0 4
+syscall
+j LABEL_IF_3
+LABEL_IF_2:
+LABEL_IF_3:
+lw $8 268501052($0)
+move $16 $8
+li $8 2
+move $17 $8
+beq $16 $17 LABEL_IF_4
+la $a0 STRING_5
+li $v0 4
+syscall
+j LABEL_IF_5
+LABEL_IF_4:
+LABEL_IF_5:
+move $8 $sp
+subi $sp $sp 20
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+jal LABEL_FUNC_i_func_return_1
+lw $16 12($sp)
+lw $17 16($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 2
+move $17 $8
+beq $16 $17 LABEL_IF_6
+la $a0 STRING_6
+li $v0 4
+syscall
+la $a0 STRING_7
+li $v0 4
+syscall
+j LABEL_IF_7
+LABEL_IF_6:
+LABEL_IF_7:
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+ble $16 $17 LABEL_IF_8
+la $a0 STRING_8
+li $v0 4
+syscall
+j LABEL_IF_9
+LABEL_IF_8:
+la $a0 STRING_9
+li $v0 4
+syscall
+la $a0 STRING_10
+li $v0 4
+syscall
+LABEL_IF_9:
+li $8 5
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+bge $16 $17 LABEL_IF_10
+la $a0 STRING_11
+li $v0 4
+syscall
+j LABEL_IF_11
+LABEL_IF_10:
+la $a0 STRING_12
+li $v0 4
+syscall
+LABEL_IF_11:
+li $8 4
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+blt $16 $17 LABEL_IF_12
+la $a0 STRING_13
+li $v0 4
+syscall
+j LABEL_IF_13
+LABEL_IF_12:
+LABEL_IF_13:
+li $8 5
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+blt $16 $17 LABEL_IF_14
+la $a0 STRING_14
+li $v0 4
+syscall
+j LABEL_IF_15
+LABEL_IF_14:
+LABEL_IF_15:
+li $8 6
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+blt $16 $17 LABEL_IF_16
+la $a0 STRING_15
+li $v0 4
+syscall
+j LABEL_IF_17
+LABEL_IF_16:
+LABEL_IF_17:
+li $8 6
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+bgt $16 $17 LABEL_IF_18
+la $a0 STRING_16
+li $v0 4
+syscall
+j LABEL_IF_19
+LABEL_IF_18:
+LABEL_IF_19:
+li $8 5
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+bgt $16 $17 LABEL_IF_20
+la $a0 STRING_17
+li $v0 4
+syscall
+j LABEL_IF_21
+LABEL_IF_20:
+LABEL_IF_21:
+li $8 4
+move $16 $8
+sw $16 268501052($0)
+lw $8 268501052($0)
+move $16 $8
+li $8 5
+move $17 $8
+bgt $16 $17 LABEL_IF_22
+la $a0 STRING_18
+li $v0 4
+syscall
+j LABEL_IF_23
+LABEL_IF_22:
+LABEL_IF_23:
+lw $8 268501052($0)
+move $16 $8
+li $8 10
+move $17 $8
+bgt $16 $17 LABEL_IF_24
+lw $8 268501052($0)
+move $16 $8
+li $8 9
+move $17 $8
+beq $16 $17 LABEL_IF_26
+lw $8 268501052($0)
+move $16 $8
+li $8 4
+move $17 $8
+bne $16 $17 LABEL_IF_28
+la $a0 STRING_19
+li $v0 4
+syscall
+j LABEL_IF_29
+LABEL_IF_28:
+la $a0 STRING_20
+li $v0 4
+syscall
+LABEL_IF_29:
+j LABEL_IF_27
+LABEL_IF_26:
+la $a0 STRING_21
+li $v0 4
+syscall
+LABEL_IF_27:
+j LABEL_IF_25
+LABEL_IF_24:
+la $a0 STRING_22
+li $v0 4
+syscall
+LABEL_IF_25:
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_func_while:
+sw $ra 0($sp)
+li $8 3
+sw $8 12($sp)
+li $8 0
+move $16 $8
+sw $16 268501052($0)
+LABEL_WHILE_HEAD_0:
+lw $8 268501052($0)
+move $16 $8
+lw $8 12($sp)
+move $17 $8
+bge $16 $17 LABEL_WHILE_0
+la $a0 STRING_23
+li $v0 4
+syscall
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 268501052($0)
+j LABEL_WHILE_HEAD_0
+LABEL_WHILE_0:
+LABEL_WHILE_HEAD_1:
+lw $8 268501052($0)
+move $16 $8
+li $8 0
+move $17 $8
+ble $16 $17 LABEL_WHILE_1
+lw $8 268501052($0)
+move $16 $8
+li $8 0
+move $17 $8
+ble $16 $17 LABEL_IF_30
+la $a0 STRING_24
+li $v0 4
+syscall
+j LABEL_IF_31
+LABEL_IF_30:
+LABEL_IF_31:
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+sub $18 $16 $17
+sw $18 268501052($0)
+j LABEL_WHILE_HEAD_1
+LABEL_WHILE_1:
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_func_switch:
+sw $ra 0($sp)
+li $8 1
+move $16 $8
+sw $16 268501052($0)
+la $a0 STRING_25
+li $v0 4
+syscall
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+bne $17 $16 LABEL_CASE_0
+la $a0 STRING_26
+li $v0 4
+syscall
+j LABEL_SWITCH_END_0
+LABEL_CASE_0:
+li $8 2
+move $17 $8
+bne $17 $16 LABEL_CASE_1
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 2
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_0
+LABEL_CASE_1:
+li $8 3
+move $17 $8
+bne $17 $16 LABEL_CASE_2
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 3
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_0
+LABEL_CASE_2:
+LABEL_SWITCH_END_0:
+li $8 2
+move $16 $8
+sw $16 268501052($0)
+la $a0 STRING_25
+li $v0 4
+syscall
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+bne $17 $16 LABEL_CASE_3
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 1
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_1
+LABEL_CASE_3:
+li $8 2
+move $17 $8
+bne $17 $16 LABEL_CASE_4
+la $a0 STRING_26
+li $v0 4
+syscall
+la $a0 STRING_28
+li $v0 4
+syscall
+j LABEL_SWITCH_END_1
+LABEL_CASE_4:
+li $8 3
+move $17 $8
+bne $17 $16 LABEL_CASE_5
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 3
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_1
+LABEL_CASE_5:
+LABEL_SWITCH_END_1:
+li $8 -1
+move $16 $8
+sw $16 268501052($0)
+la $a0 STRING_29
+li $v0 4
+syscall
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+bne $17 $16 LABEL_CASE_6
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 1
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_2
+LABEL_CASE_6:
+li $8 2
+move $17 $8
+bne $17 $16 LABEL_CASE_7
+la $a0 STRING_26
+li $v0 4
+syscall
+j LABEL_SWITCH_END_2
+LABEL_CASE_7:
+li $8 3
+move $17 $8
+bne $17 $16 LABEL_CASE_8
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 3
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_2
+LABEL_CASE_8:
+la $a0 STRING_30
+li $v0 4
+syscall
+LABEL_SWITCH_END_2:
+li $8 99
+move $16 $8
+sw $16 268501056($0)
+la $a0 STRING_31
+li $v0 4
+syscall
+lw $8 268501056($0)
+move $16 $8
+li $8 97
+move $17 $8
+bne $17 $16 LABEL_CASE_9
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 1
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_3
+LABEL_CASE_9:
+li $8 98
+move $17 $8
+bne $17 $16 LABEL_CASE_10
+la $a0 STRING_27
+li $v0 4
+syscall
+li $8 2
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+j LABEL_SWITCH_END_3
+LABEL_CASE_10:
+li $8 99
+move $17 $8
+bne $17 $16 LABEL_CASE_11
+la $a0 STRING_26
+li $v0 4
+syscall
+j LABEL_SWITCH_END_3
+LABEL_CASE_11:
+LABEL_SWITCH_END_3:
+la $a0 STRING_32
+li $v0 4
+syscall
+la $a0 STRING_33
+li $v0 4
+syscall
+lw $8 12($sp)
+li $v0 5
+syscall
+move $8 $v0
+sw $8 12($sp)
+li $8 0
+move $16 $8
+sw $16 268501052($0)
+LABEL_WHILE_HEAD_2:
+lw $8 268501052($0)
+move $16 $8
+lw $8 12($sp)
+move $17 $8
+bge $16 $17 LABEL_WHILE_2
+la $a0 STRING_34
+li $v0 4
+syscall
+lw $8 268501064($0)
+li $v0 12
+syscall
+move $8 $v0
+sw $8 268501064($0)
+lw $8 268501052($0)
+move $16 $8
+lw $8 268501064($0)
+move $17 $8
+sll $16 $16 2
+addi $16 $16 16
+add $16 $16 $sp
+sw $17 0($16)
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 268501052($0)
+j LABEL_WHILE_HEAD_2
+LABEL_WHILE_2:
+li $8 0
+move $16 $8
+sw $16 268501052($0)
+li $8 0
+move $16 $8
+sw $16 56($sp)
+LABEL_WHILE_HEAD_3:
+lw $8 268501052($0)
+move $16 $8
+lw $8 12($sp)
+move $17 $8
+bge $16 $17 LABEL_WHILE_3
+lw $8 268501052($0)
+move $16 $8
+sll $16 $16 2
+addi $16 $16 16
+add $16 $16 $sp
+lw $16 0($16)
+move $17 $16
+li $8 97
+move $18 $8
+bne $18 $17 LABEL_CASE_12
+lw $8 56($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 56($sp)
+j LABEL_SWITCH_END_4
+LABEL_CASE_12:
+li $8 101
+move $19 $8
+bne $19 $17 LABEL_CASE_13
+lw $8 56($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 56($sp)
+j LABEL_SWITCH_END_4
+LABEL_CASE_13:
+li $8 105
+move $19 $8
+bne $19 $17 LABEL_CASE_14
+lw $8 56($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 56($sp)
+j LABEL_SWITCH_END_4
+LABEL_CASE_14:
+li $8 111
+move $19 $8
+bne $19 $17 LABEL_CASE_15
+lw $8 56($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 56($sp)
+j LABEL_SWITCH_END_4
+LABEL_CASE_15:
+li $8 117
+move $19 $8
+bne $19 $17 LABEL_CASE_16
+lw $8 56($sp)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 56($sp)
+j LABEL_SWITCH_END_4
+LABEL_CASE_16:
+LABEL_SWITCH_END_4:
+lw $8 268501052($0)
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 268501052($0)
+j LABEL_WHILE_HEAD_3
+LABEL_WHILE_3:
+la $a0 STRING_35
+li $v0 4
+syscall
+lw $8 56($sp)
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_i_func_calc:
+sw $ra 0($sp)
+li $8 100
+sw $8 20($sp)
+li $8 100
+move $16 $8
+sw $16 268501032($0)
+lw $8 12($sp)
+move $16 $8
+lw $8 16($sp)
+move $17 $8
+sub $18 $16 $17
+lw $8 20($sp)
+move $19 $8
+lw $8 268500996($0)
+move $20 $8
+mult $19 $20
+mflo $21
+add $22 $18 $21
+lw $8 268501032($0)
+move $23 $8
+add $24 $22 $23
+sw $24 24($sp)
+la $a0 STRING_36
+li $v0 4
+syscall
+la $a0 STRING_37
+li $v0 4
+syscall
+lw $8 24($sp)
+move $16 $8
+move $a0 $16
+li $v0 1
+syscall
+la $a0 STRING_38
+li $v0 4
+syscall
+la $a0 STRING_39
+li $v0 4
+syscall
+lw $8 268500992($0)
+move $16 $8
+lw $8 268500996($0)
+move $17 $8
+sub $18 $16 $17
+move $19 $18
+lw $8 12($sp)
+move $20 $8
+mult $19 $20
+mflo $21
+lw $8 268501000($0)
+move $22 $8
+lw $8 16($sp)
+move $23 $8
+div $22 $23
+mflo $24
+lw $8 268501000($0)
+move $25 $8
+li $8 5
+move $26 $8
+mult $25 $26
+mflo $8
+sw $8 268502084($0)
+lw $8 20($sp)
+sw $8 268502088($0)
+lw $8 268500992($0)
+sw $8 268502092($0)
+move $8 $sp
+subi $sp $sp 72
+sw $8 4($sp)
+lw $8 268506092($0)
+sw $8 12($sp)
+sw $16 16($sp)
+sw $17 20($sp)
+sw $18 24($sp)
+sw $19 28($sp)
+sw $20 32($sp)
+sw $21 36($sp)
+sw $22 40($sp)
+sw $23 44($sp)
+sw $24 48($sp)
+sw $25 52($sp)
+sw $26 56($sp)
+lw $8 268506084($0)
+sw $8 60($sp)
+lw $8 268506088($0)
+sw $8 64($sp)
+lw $8 268506092($0)
+sw $8 68($sp)
+jal LABEL_FUNC_i_func_add
+lw $16 16($sp)
+lw $17 20($sp)
+lw $18 24($sp)
+lw $19 28($sp)
+lw $20 32($sp)
+lw $21 36($sp)
+lw $22 40($sp)
+lw $23 44($sp)
+lw $24 48($sp)
+lw $25 52($sp)
+lw $26 56($sp)
+lw $8 60($sp)
+sw $8 268502084($0)
+lw $8 64($sp)
+sw $8 268502092($0)
+lw $8 68($sp)
+sw $8 268502104($0)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+sw $3 268502096($0)
+lw $8 268506088($0)
+lw $9 268506096($0)
+div $8 $9
+mflo $10
+sw $10 268502100($0)
+lw $8 268506100($0)
+sw $8 268502104($0)
+lw $8 268506084($0)
+lw $9 268506104($0)
+sub $10 $8 $9
+sw $10 268502108($0)
+lw $8 268506108($0)
+sw $8 268502112($0)
+lw $8 268506112($0)
+add $9 $24 $8
+sw $9 268502116($0)
+lw $8 268506116($0)
+sw $8 268502120($0)
+lw $8 268506120($0)
+add $9 $21 $8
+sw $9 268502124($0)
+lw $8 268506124($0)
+move $a0 $8
+li $v0 1
+syscall
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_c_func_return_d:
+sw $ra 0($sp)
+la $a0 STRING_40
+li $v0 4
+syscall
+li $8 99
+move $16 $8
+li $8 1
+move $17 $8
+add $18 $16 $17
+sw $18 8($sp)
+lw $ra 0($sp)
+jr $ra
+li $8 0
+sw $8 8($sp)
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_c_func_ch_calc:
+sw $ra 0($sp)
+li $8 1
+move $16 $8
+sw $16 16($sp)
+lw $8 12($sp)
+move $16 $8
+lw $8 16($sp)
+move $17 $8
+add $18 $16 $17
+sw $18 20($sp)
+la $a0 STRING_41
+li $v0 4
+syscall
+lw $8 20($sp)
+move $16 $8
+move $a0 $16
+li $v0 11
+syscall
+lw $8 20($sp)
+move $16 $8
+sw $16 8($sp)
+lw $ra 0($sp)
+jr $ra
+li $8 0
+sw $8 8($sp)
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_power:
+sw $ra 0($sp)
+lw $8 12($sp)
+move $16 $8
+sw $16 20($sp)
+lw $8 16($sp)
+move $16 $8
+li $8 1
+move $17 $8
+bne $16 $17 LABEL_IF_32
+lw $8 12($sp)
+move $16 $8
+sw $16 8($sp)
+lw $ra 0($sp)
+jr $ra
+j LABEL_IF_33
+LABEL_IF_32:
+LABEL_IF_33:
+lw $8 20($sp)
+move $16 $8
+lw $8 12($sp)
+move $17 $8
+lw $8 16($sp)
+move $18 $8
+li $8 1
+move $19 $8
+sub $20 $18 $19
+move $8 $sp
+subi $sp $sp 44
+sw $8 4($sp)
+sw $17 12($sp)
+sw $20 16($sp)
+sw $16 24($sp)
+sw $17 28($sp)
+sw $18 32($sp)
+sw $19 36($sp)
+sw $20 40($sp)
+jal LABEL_FUNC_power
+lw $16 24($sp)
+lw $17 28($sp)
+lw $18 32($sp)
+lw $19 36($sp)
+lw $20 40($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $21 $3
+mult $16 $21
+mflo $22
+sw $22 20($sp)
+lw $8 20($sp)
+move $16 $8
+sw $16 8($sp)
+lw $ra 0($sp)
+jr $ra
+li $8 0
+sw $8 8($sp)
+lw $ra 0($sp)
+jr $ra
+LABEL_FUNC_main:
+sw $ra 0($sp)
+li $8 0
+sw $8 12($sp)
+lw $8 12($sp)
+move $16 $8
+move $8 $sp
+subi $sp $sp 20
+sw $8 4($sp)
+sw $16 12($sp)
+sw $16 16($sp)
+jal LABEL_FUNC_v_func_add
+lw $16 16($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $17 $3
+move $8 $sp
+subi $sp $sp 20
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+jal LABEL_FUNC_v_func_ret
+lw $16 12($sp)
+lw $17 16($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+la $a0 STRING_42
+li $v0 4
+syscall
+move $8 $sp
+subi $sp $sp 20
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+jal LABEL_FUNC_i_func_return_1
+lw $16 12($sp)
+lw $17 16($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+sw $16 16($sp)
+lw $8 16($sp)
+move $16 $8
+li $8 1
+move $17 $8
+bne $16 $17 LABEL_IF_34
+la $a0 STRING_43
+li $v0 4
+syscall
+j LABEL_IF_35
+LABEL_IF_34:
+LABEL_IF_35:
+li $8 3
+move $16 $8
+sw $16 16($sp)
+lw $8 268500996($0)
+move $16 $8
+lw $8 16($sp)
+move $17 $8
+move $8 $sp
+subi $sp $sp 36
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+sw $16 28($sp)
+sw $17 32($sp)
+jal LABEL_FUNC_i_func_calc
+lw $16 28($sp)
+lw $17 32($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $18 $3
+move $8 $sp
+subi $sp $sp 24
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+sw $18 20($sp)
+jal LABEL_FUNC_c_func_return_d
+lw $16 12($sp)
+lw $17 16($sp)
+lw $18 20($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+move $a0 $16
+li $v0 11
+syscall
+lw $8 268501056($0)
+li $v0 12
+syscall
+move $8 $v0
+sw $8 268501056($0)
+lw $8 268501056($0)
+move $16 $8
+lw $8 268501032($0)
+move $17 $8
+move $8 $sp
+subi $sp $sp 36
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+sw $16 24($sp)
+sw $17 28($sp)
+sw $18 32($sp)
+jal LABEL_FUNC_c_func_ch_calc
+lw $16 24($sp)
+lw $17 28($sp)
+lw $18 32($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $18 $3
+move $a0 $18
+li $v0 11
+syscall
+move $8 $sp
+subi $sp $sp 24
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+sw $18 20($sp)
+jal LABEL_FUNC_func_if_cmp
+lw $16 12($sp)
+lw $17 16($sp)
+lw $18 20($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+move $8 $sp
+subi $sp $sp 28
+sw $8 4($sp)
+sw $16 16($sp)
+sw $17 20($sp)
+sw $18 24($sp)
+jal LABEL_FUNC_func_while
+lw $16 16($sp)
+lw $17 20($sp)
+lw $18 24($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+move $8 $sp
+subi $sp $sp 72
+sw $8 4($sp)
+sw $16 60($sp)
+sw $17 64($sp)
+sw $18 68($sp)
+jal LABEL_FUNC_func_switch
+lw $16 60($sp)
+lw $17 64($sp)
+lw $18 68($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $16 $3
+la $a0 STRING_44
+li $v0 4
+syscall
+la $a0 STRING_45
+li $v0 4
+syscall
+li $8 -5
+move $16 $8
+li $8 3
+move $17 $8
+move $8 $sp
+subi $sp $sp 36
+sw $8 4($sp)
+sw $16 12($sp)
+sw $17 16($sp)
+sw $16 24($sp)
+sw $17 28($sp)
+sw $18 32($sp)
+jal LABEL_FUNC_power
+lw $16 24($sp)
+lw $17 28($sp)
+lw $18 32($sp)
+lw $3 8($sp)
+lw $8 4($sp)
+move $sp $8
+move $18 $3
+move $a0 $18
+li $v0 1
+syscall

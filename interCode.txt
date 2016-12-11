@@ -1,0 +1,492 @@
+=,(1),,num1
+=,(-2),,num_2
+=,(0),,num_0
+=,(0),,num_a
+=,(97),,ch_a
+=,(48),,ch_0
+=,(95),,ch__
+=,(42),,ch_star
+=,(45),,ch_plus
+=,(66),,ch_b
+j,,,LABEL_FUNC_main
+LABEL_FUNC_v_func_add:
+=,x,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,x
+printf,,,{"x+1="}
+=,x,,T_0
+printf,,,T_0
+LABEL_FUNC_v_func_ret:
+printf,,,{"void return check ok"}
+return,,,
+printf,,,{"failed"}
+LABEL_FUNC_i_func_return_1:
+=,(1),,T_0
+return,,,T_0
+LABEL_FUNC_i_func_add:
+=,y,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+return,,,T_2
+LABEL_FUNC_func_if_cmp:
+=,(1),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(2),,T_1
+!=,T_0,T_1,LABEL_IF_0
+printf,,,{"== check failed"}
+j,,,LABEL_IF_1
+LABEL_IF_0:
+LABEL_IF_1:
+=,num5,,T_0
+=,i_func_add(T_0),,T_1
+=,T_1,,num5
+=,num5,,T_0
+=,(2),,T_1
+!=,T_0,T_1,LABEL_IF_2
+printf,,,{"== check ok"}
+j,,,LABEL_IF_3
+LABEL_IF_2:
+LABEL_IF_3:
+=,num5,,T_0
+=,(2),,T_1
+==,T_0,T_1,LABEL_IF_4
+printf,,,{"!= check failed"}
+j,,,LABEL_IF_5
+LABEL_IF_4:
+LABEL_IF_5:
+=,i_func_return_1(),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(2),,T_1
+==,T_0,T_1,LABEL_IF_6
+printf,,,{"return 1 check ok"}
+printf,,,{"!= check ok"}
+j,,,LABEL_IF_7
+LABEL_IF_6:
+LABEL_IF_7:
+=,num5,,T_0
+=,(5),,T_1
+<=,T_0,T_1,LABEL_IF_8
+printf,,,{"> check failed"}
+j,,,LABEL_IF_9
+LABEL_IF_8:
+printf,,,{"else check ok"}
+printf,,,{"> check ok"}
+LABEL_IF_9:
+=,(5),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+>=,T_0,T_1,LABEL_IF_10
+printf,,,{"< check failed"}
+j,,,LABEL_IF_11
+LABEL_IF_10:
+printf,,,{"< check ok"}
+LABEL_IF_11:
+=,(4),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+<,T_0,T_1,LABEL_IF_12
+printf,,,{">= check failed"}
+j,,,LABEL_IF_13
+LABEL_IF_12:
+LABEL_IF_13:
+=,(5),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+<,T_0,T_1,LABEL_IF_14
+printf,,,{"5>=5 check ok"}
+j,,,LABEL_IF_15
+LABEL_IF_14:
+LABEL_IF_15:
+=,(6),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+<,T_0,T_1,LABEL_IF_16
+printf,,,{"6>=5 check ok"}
+j,,,LABEL_IF_17
+LABEL_IF_16:
+LABEL_IF_17:
+=,(6),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+>,T_0,T_1,LABEL_IF_18
+printf,,,{"<= check failed"}
+j,,,LABEL_IF_19
+LABEL_IF_18:
+LABEL_IF_19:
+=,(5),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+>,T_0,T_1,LABEL_IF_20
+printf,,,{"5<=5 check ok"}
+j,,,LABEL_IF_21
+LABEL_IF_20:
+LABEL_IF_21:
+=,(4),,T_0
+=,T_0,,num5
+=,num5,,T_0
+=,(5),,T_1
+>,T_0,T_1,LABEL_IF_22
+printf,,,{"4<=5 check ok"}
+j,,,LABEL_IF_23
+LABEL_IF_22:
+LABEL_IF_23:
+=,num5,,T_0
+=,(10),,T_1
+>,T_0,T_1,LABEL_IF_24
+=,num5,,T_0
+=,(9),,T_1
+==,T_0,T_1,LABEL_IF_26
+=,num5,,T_0
+=,(4),,T_1
+!=,T_0,T_1,LABEL_IF_28
+printf,,,{"multiple if check ok"}
+j,,,LABEL_IF_29
+LABEL_IF_28:
+printf,,,{"multiple if check failed1"}
+LABEL_IF_29:
+j,,,LABEL_IF_27
+LABEL_IF_26:
+printf,,,{"multiple if check failed2"}
+LABEL_IF_27:
+j,,,LABEL_IF_25
+LABEL_IF_24:
+printf,,,{"multiple if check failed3"}
+LABEL_IF_25:
+LABEL_FUNC_func_while:
+=,(3),,len
+=,(0),,T_0
+=,T_0,,num5
+LABEL_WHILE_HEAD_0:
+=,num5,,T_0
+=,len,,T_1
+>=,T_0,T_1,LABEL_WHILE_0
+printf,,,{"while for 3 times"}
+=,num5,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,num5
+j,,,LABEL_WHILE_HEAD_0
+LABEL_WHILE_0:
+LABEL_WHILE_HEAD_1:
+=,num5,,T_0
+=,(0),,T_1
+<=,T_0,T_1,LABEL_WHILE_1
+=,num5,,T_0
+=,(0),,T_1
+<=,T_0,T_1,LABEL_IF_30
+printf,,,{"while if num5 > 0 for 3 times"}
+j,,,LABEL_IF_31
+LABEL_IF_30:
+LABEL_IF_31:
+=,num5,,T_0
+=,(1),,T_1
+-,T_0,T_1,T_2
+=,T_2,,num5
+j,,,LABEL_WHILE_HEAD_1
+LABEL_WHILE_1:
+LABEL_FUNC_func_switch:
+=,(1),,T_0
+=,T_0,,num5
+printf,,,{"number 1 switch check"}
+=,num5,,T_0
+=,(1),,T_1
+!=,T_1,T_0,LABEL_CASE_0
+printf,,,{"match check ok"}
+j,,,LABEL_SWITCH_END_0
+LABEL_CASE_0:
+=,(2),,T_1
+!=,T_1,T_0,LABEL_CASE_1
+printf,,,{"check failed at "}
+=,(2),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_0
+LABEL_CASE_1:
+=,(3),,T_1
+!=,T_1,T_0,LABEL_CASE_2
+printf,,,{"check failed at "}
+=,(3),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_0
+LABEL_CASE_2:
+LABEL_SWITCH_END_0:
+=,(2),,T_0
+=,T_0,,num5
+printf,,,{"number 1 switch check"}
+=,num5,,T_0
+=,(1),,T_1
+!=,T_1,T_0,LABEL_CASE_3
+printf,,,{"check failed at "}
+=,(1),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_1
+LABEL_CASE_3:
+=,(2),,T_1
+!=,T_1,T_0,LABEL_CASE_4
+printf,,,{"match check ok"}
+printf,,,{"multiple switch statement check ok"}
+j,,,LABEL_SWITCH_END_1
+LABEL_CASE_4:
+=,(3),,T_1
+!=,T_1,T_0,LABEL_CASE_5
+printf,,,{"check failed at "}
+=,(3),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_1
+LABEL_CASE_5:
+LABEL_SWITCH_END_1:
+=,(-1),,T_0
+=,T_0,,num5
+printf,,,{"default check"}
+=,num5,,T_0
+=,(1),,T_1
+!=,T_1,T_0,LABEL_CASE_6
+printf,,,{"check failed at "}
+=,(1),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_2
+LABEL_CASE_6:
+=,(2),,T_1
+!=,T_1,T_0,LABEL_CASE_7
+printf,,,{"match check ok"}
+j,,,LABEL_SWITCH_END_2
+LABEL_CASE_7:
+=,(3),,T_1
+!=,T_1,T_0,LABEL_CASE_8
+printf,,,{"check failed at "}
+=,(3),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_2
+LABEL_CASE_8:
+printf,,,{"default check ok"}
+LABEL_SWITCH_END_2:
+=,['c'],,T_0
+=,T_0,,ch_c
+printf,,,{"char switch check "}
+=,ch_c,,T_0
+=,['a'],,T_1
+!=,T_1,T_0,LABEL_CASE_9
+printf,,,{"check failed at "}
+=,(1),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_3
+LABEL_CASE_9:
+=,['b'],,T_1
+!=,T_1,T_0,LABEL_CASE_10
+printf,,,{"check failed at "}
+=,(2),,T_0
+printf,,,T_0
+j,,,LABEL_SWITCH_END_3
+LABEL_CASE_10:
+=,['c'],,T_1
+!=,T_1,T_0,LABEL_CASE_11
+printf,,,{"match check ok"}
+j,,,LABEL_SWITCH_END_3
+LABEL_CASE_11:
+LABEL_SWITCH_END_3:
+printf,,,{"check while switch:"}
+printf,,,{"enter length of string(1-10):"}
+scanf,,,len
+=,(0),,T_0
+=,T_0,,num5
+LABEL_WHILE_HEAD_2:
+=,num5,,T_0
+=,len,,T_1
+>=,T_0,T_1,LABEL_WHILE_2
+printf,,,{"enter a letter:"}
+scanf,,,ch2
+=,num5,,T_0
+=,ch2,,T_1
+=,T_1,,str[T_0]
+=,num5,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,num5
+j,,,LABEL_WHILE_HEAD_2
+LABEL_WHILE_2:
+=,(0),,T_0
+=,T_0,,num5
+=,(0),,T_0
+=,T_0,,cnt
+LABEL_WHILE_HEAD_3:
+=,num5,,T_0
+=,len,,T_1
+>=,T_0,T_1,LABEL_WHILE_3
+=,num5,,T_0
+=,str[T_0],,T_1
+=,['a'],,T_2
+!=,T_2,T_1,LABEL_CASE_12
+=,cnt,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,cnt
+j,,,LABEL_SWITCH_END_4
+LABEL_CASE_12:
+=,['e'],,T_3
+!=,T_3,T_1,LABEL_CASE_13
+=,cnt,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,cnt
+j,,,LABEL_SWITCH_END_4
+LABEL_CASE_13:
+=,['i'],,T_3
+!=,T_3,T_1,LABEL_CASE_14
+=,cnt,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,cnt
+j,,,LABEL_SWITCH_END_4
+LABEL_CASE_14:
+=,['o'],,T_3
+!=,T_3,T_1,LABEL_CASE_15
+=,cnt,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,cnt
+j,,,LABEL_SWITCH_END_4
+LABEL_CASE_15:
+=,['u'],,T_3
+!=,T_3,T_1,LABEL_CASE_16
+=,cnt,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,cnt
+j,,,LABEL_SWITCH_END_4
+LABEL_CASE_16:
+LABEL_SWITCH_END_4:
+=,num5,,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+=,T_2,,num5
+j,,,LABEL_WHILE_HEAD_3
+LABEL_WHILE_3:
+printf,,,{"cnt="}
+=,cnt,,T_0
+printf,,,T_0
+LABEL_FUNC_i_func_calc:
+=,(100),,c
+=,(100),,T_0
+=,T_0,,num3
+=,a,,T_0
+=,b,,T_1
+-,T_0,T_1,T_2
+=,c,,T_3
+=,num_2,,T_4
+*,T_3,T_4,T_5
++,T_2,T_5,T_6
+=,num3,,T_7
++,T_6,T_7,T_8
+=,T_8,,ans
+printf,,,{"simple expression"}
+printf,,,{"ans = a - b + 100 * -2 + num3 = "}
+=,ans,,T_0
+printf,,,T_0
+printf,,,{"complex expression:"}
+printf,,,{"3a-50="}
+=,num1,,T_0
+=,num_2,,T_1
+-,T_0,T_1,T_2
+=,T_2,,T_3
+=,a,,T_4
+*,T_3,T_4,T_5
+=,num_0,,T_6
+=,b,,T_7
+/,T_6,T_7,T_8
+=,num_0,,T_9
+=,(5),,T_10
+*,T_9,T_10,T_11
+=,c,,T_12
+=,num1,,T_13
+=,i_func_add(T_13),,T_14
+/,T_12,T_14,T_15
+=,T_15,,T_16
+-,T_11,T_16,T_17
+=,T_17,,T_18
++,T_8,T_18,T_19
+=,T_19,,T_20
++,T_5,T_20,T_21
+printf,,,T_21
+LABEL_FUNC_c_func_return_d:
+printf,,,{"return 'd'"}
+=,['c'],,T_0
+=,(1),,T_1
++,T_0,T_1,T_2
+return,,,T_2
+LABEL_FUNC_c_func_ch_calc:
+=,(1),,T_0
+=,T_0,,n
+=,ch,,T_0
+=,n,,T_1
++,T_0,T_1,T_2
+=,T_2,,t
+printf,,,{"ch+1="}
+=,t,,T_0
+printf,,,T_0
+=,t,,T_0
+return,,,T_0
+LABEL_FUNC_power:
+=,a,,T_0
+=,T_0,,t
+=,b,,T_0
+=,(1),,T_1
+!=,T_0,T_1,LABEL_IF_32
+=,a,,T_0
+return,,,T_0
+j,,,LABEL_IF_33
+LABEL_IF_32:
+LABEL_IF_33:
+=,t,,T_0
+=,a,,T_1
+=,b,,T_2
+=,(1),,T_3
+-,T_2,T_3,T_4
+=,power(T_1,T_4),,T_5
+*,T_0,T_5,T_6
+=,T_6,,t
+=,t,,T_0
+return,,,T_0
+LABEL_FUNC_main:
+=,(0),,m
+=,m,,T_0
+=,v_func_add(T_0),,T_1
+=,v_func_ret(),,T_0
+printf,,,{"return 1 check"}
+=,i_func_return_1(),,T_0
+=,T_0,,n
+=,n,,T_0
+=,(1),,T_1
+!=,T_0,T_1,LABEL_IF_34
+printf,,,{"ok"}
+j,,,LABEL_IF_35
+LABEL_IF_34:
+LABEL_IF_35:
+=,(3),,T_0
+=,T_0,,n
+=,num_2,,T_0
+=,n,,T_1
+=,i_func_calc(T_0,T_1),,T_2
+=,c_func_return_d(),,T_0
+printf,,,T_0
+scanf,,,ch_c
+=,ch_c,,T_0
+=,num3,,T_1
+=,c_func_ch_calc(T_0,T_1),,T_2
+printf,,,T_2
+=,func_if_cmp(),,T_0
+=,func_while(),,T_0
+=,func_switch(),,T_0
+printf,,,{"check power:"}
+printf,,,{"-5^3="}
+=,(-5),,T_0
+=,(3),,T_1
+=,power(T_0,T_1),,T_2
+printf,,,T_2
